@@ -4,9 +4,9 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "prebuild": "expo prebuild",
     "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web"
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "@config-plugins/react-native-webrtc": "^8.0.0",
@@ -26,17 +26,6 @@
   "expo": {
     "autolinking": {
       "nativeModulesDir": ".."
-    },
-    "plugins": [
-      [
-        "../app.plugin.js",
-        { 
-          "android": {
-            "audioType": "media"
-          }
-        }
-      ],
-      "@config-plugins/react-native-webrtc"
-    ]
+    }
   }
 }

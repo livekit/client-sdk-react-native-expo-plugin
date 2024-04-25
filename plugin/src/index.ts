@@ -16,7 +16,7 @@ const withLiveKit: ConfigPlugin<LKConfigOptions> = (config, options) => {
 
     AndroidConfig.Manifest.addMetaDataItemToMainApplication(
       mainApplication,
-      'LK_ANDROID_AUDIO_TYPE',
+      'io.livekit.reactnative.expo.ANDROID_AUDIO_TYPE',
       options.android.audioType
     );
     return config;
@@ -24,3 +24,5 @@ const withLiveKit: ConfigPlugin<LKConfigOptions> = (config, options) => {
 
   return config;
 };
+
+export default withLiveKit;

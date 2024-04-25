@@ -32,6 +32,17 @@
       "eas": {
         "projectId": "436b85b6-499e-427e-b3be-50f71b1d66bc"
       }
-    }
+    },
+    "plugins": [
+      [
+        "../app.plugin.js",
+        { 
+          "android": {
+            "audioType": "fdsa"
+          }
+        }
+      ],
+      "@config-plugins/react-native-webrtc"
+    ]
   }
 }
