@@ -38,7 +38,7 @@
         "../app.plugin.js",
         { 
           "android": {
-            "audioType": "fdsa"
+            "audioType": "media"
           }
         }
       ],

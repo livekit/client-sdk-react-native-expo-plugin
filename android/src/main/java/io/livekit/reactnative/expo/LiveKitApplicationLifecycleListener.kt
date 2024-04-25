@@ -21,7 +21,6 @@ class LiveKitApplicationLifecycleListener : ApplicationLifecycleListener {
         AudioType.CommunicationAudioType()
       }
     }
-    Log.e("LOL", "audio type: $audioTypeString , $audioType")
     LiveKitReactNative.setup(application, audioType)
   }
 }
