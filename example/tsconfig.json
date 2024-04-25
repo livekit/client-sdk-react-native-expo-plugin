@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "react-native-expo-plugin": ["../src/index"],
+      "react-native-expo-plugin/*": ["../src/*"]
+    }
+  }
+}
