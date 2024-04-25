@@ -9,7 +9,11 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@config-plugins/react-native-webrtc": "^8.0.0",
+    "@livekit/react-native": "^2.1.0-0",
+    "@livekit/react-native-webrtc": "^114.1.1",
     "expo": "~50.0.14",
+    "expo-dev-client": "~3.3.11",
     "react": "18.2.0",
     "react-native": "0.73.6"
   },
@@ -22,6 +26,7 @@
   "expo": {
     "autolinking": {
       "nativeModulesDir": ".."
-    }
+    },
+    "plugins": ["@config-plugins/react-native-webrtc"]
   }
 }

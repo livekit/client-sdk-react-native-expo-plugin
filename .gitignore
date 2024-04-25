@@ -38,6 +38,7 @@ local.properties
 android.iml
 android/app/libs
 android/keystores/debug.keystore
+*.apk
 
 # Cocoapods
 #
