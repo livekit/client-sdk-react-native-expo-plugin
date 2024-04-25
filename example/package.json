@@ -1,5 +1,5 @@
 {
-  "name": "react-native-expo-plugin-example",
+  "name": "@livekit/react-native-expo-plugin-example",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -27,6 +27,16 @@
     "autolinking": {
       "nativeModulesDir": ".."
     },
-    "plugins": ["@config-plugins/react-native-webrtc"]
+    "plugins": [
+      [
+        "../app.plugin.js",
+        { 
+          "android": {
+            "audioType": "media"
+          }
+        }
+      ],
+      "@config-plugins/react-native-webrtc"
+    ]
   }
 }
