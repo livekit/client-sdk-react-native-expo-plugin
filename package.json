@@ -21,7 +21,10 @@
     "react-native-expo-plugin",
     "LiveKit"
   ],
-  "repository": "https://github.com/livekit/client-sdk-react-native-expo-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livekit/client-sdk-react-native-expo-plugin.git"
+  },
   "bugs": {
     "url": "https://github.com/livekit/client-sdk-react-native-expo-plugin/issues"
   },
