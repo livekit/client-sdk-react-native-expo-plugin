@@ -1,35 +1,47 @@
-# react-native-expo-plugin
+# Expo Plugin for LiveKit React Native SDK
 
-Expo Plugin for LiveKit React Native SDK
+This plugin handles the setup required for Expo projects to use the [LiveKit React Native SDK](https://github.com/livekit/client-sdk-react-native).
 
-# API documentation
+## Installation for managed Expo projects
 
-- [Documentation for the main branch](https://github.com/expo/expo/blob/main/docs/pages/versions/unversioned/sdk/react-native-plugin.md)
-- [Documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/react-native-plugin/)
-
-# Installation in managed Expo projects
-
-For [managed](https://docs.expo.dev/archive/managed-vs-bare/) Expo projects, please follow the installation instructions in the [API documentation for the latest stable release](#api-documentation). If you follow the link and there is no documentation available then this library is not yet usable within managed projects &mdash; it is likely to be included in an upcoming Expo SDK release.
-
-# Installation in bare React Native projects
-
-For bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.
-
-### Add the package to your npm dependencies
-
-```
-npm install react-native-expo-plugin
+```sh
+npx expo install @livekit/react-native @livekit/react-native-expo-plugin
 ```
 
-### Configure for iOS
+[@config-plugins/react-native-webrtc](https://www.npmjs.com/package/@config-plugins/react-native-webrtc) is also highly suggested to be installed alongside this plugin.
 
-Run `npx pod-install` after installing the npm package.
+### Configure app.json
 
+After installing this npm package, add the config plugin to the plugins array of your app.json or app.config.js:
 
-### Configure for Android
+```
+{
+  "expo": {
+    "plugins": ["@livekit/react-native-expo-plugin"]
+  }
+}
+```
 
+This plugin optionally takes in an [object to customize the configuration](
+https://github.com/livekit/client-sdk-react-native-expo-plugin/blob/main/plugin/src/index.ts):
 
+```
+{
+  "expo": {
+    "plugins": [
+      [
+        "@livekit/react-native-expo-plugin",
+        {
+          "android": {
+            "audioType": <"media" or "communication"> (defaults to "communication")
+          }
+        }
+      ]
+    ]
+  }
+}
+```
 
-# Contributing
+## Installation in React Native projects
 
-Contributions are very welcome! Please refer to guidelines described in the [contributing guide]( https://github.com/expo/expo#contributing).
+Config plugins are not supported in React Native projects. Read the [installation guide on the React Native SDK](https://github.com/livekit/client-sdk-react-native?tab=readme-ov-file#installation) to see how to setup in a React Native project.
