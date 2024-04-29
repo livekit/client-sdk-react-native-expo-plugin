@@ -1,6 +1,6 @@
 {
   "name": "@livekit/react-native-expo-plugin",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Expo Plugin for LiveKit React Native SDK",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -41,6 +41,6 @@
     "expo": "*",
     "react": "*",
     "react-native": "*",
-    "@livekit/react-native": "^2.1.0-0"
+    "@livekit/react-native": "^2.1.0"
   }
 }
