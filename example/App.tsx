@@ -22,10 +22,9 @@ import { Track } from 'livekit-client';
 
 registerGlobals();
 
-// !! Note !!
-// This sample hardcodes a token which expires in 2 hours.
-const wsURL = "wss://pzychotix.livekit.cloud"
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDIwMjY3ODEsImlzcyI6IkFQSXZmUHZGUEQ2ZE1pUSIsIm5iZiI6MTcxMDQ5MDc4MSwic3ViIjoicGhvbmUiLCJ2aWRlbyI6eyJjYW5QdWJsaXNoIjp0cnVlLCJjYW5QdWJsaXNoRGF0YSI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlLCJyb29tIjoidGVzdHJvb20yIiwicm9vbUpvaW4iOnRydWV9fQ.RfirrRLUmUbjHgRZ2ikTnP_5yE21U2ajy1F1_KONEM0"
+// Fill in these values with your own url and token.
+const wsURL = "wss://www.example.com"
+const token = "your-token-here"
 export default function App () {
 
   // Start the audio session first.
