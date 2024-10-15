@@ -17,16 +17,7 @@ After installing this npm package, add the config plugin to the plugins array of
 ```
 {
   "expo": {
-    "plugins": [
-      [
-        "@livekit/react-native-expo-plugin",
-        {
-          "android": {
-            "audioType": <"media" or "communication"> (defaults to "communication")
-          }
-        }
-      ]
-    ]
+    "plugins": ["@livekit/react-native-expo-plugin", "@config-plugins/react-native-webrtc"]
   }
 }
 ```
