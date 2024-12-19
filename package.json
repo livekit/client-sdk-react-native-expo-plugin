@@ -31,16 +31,15 @@
   "author": "LiveKit <dl@livekit.io> (https://github.com/livekit)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/livekit/client-sdk-react-native-expo-plugin#readme",
-  "dependencies": {},
   "devDependencies": {
     "@types/react": "^18.0.25",
     "expo-module-scripts": "^3.4.1",
     "expo-modules-core": "^1.11.12"
   },
   "peerDependencies": {
+    "@livekit/react-native": "^2.1.0",
     "expo": "*",
     "react": "*",
-    "react-native": "*",
-    "@livekit/react-native": "^2.1.0"
+    "react-native": "*"
   }
 }

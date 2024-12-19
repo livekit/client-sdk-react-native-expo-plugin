@@ -63,6 +63,15 @@ android {
     kotlinOptions {
       jvmTarget = JavaVersion.VERSION_11.majorVersion
     }
+  } else {
+    compileOptions {
+      sourceCompatibility JavaVersion.VERSION_17
+      targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+      jvmTarget = JavaVersion.VERSION_17
+    }
   }
 
   namespace "io.livekit.reactnative.expo"
