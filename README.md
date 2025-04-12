@@ -7,7 +7,7 @@ This plugin handles the setup required for Expo projects to use the [LiveKit Rea
 ## Installation for managed Expo projects
 
 ```sh
-npx expo install @livekit/react-native @livekit/react-native-expo-plugin @livekit/react-native-webrtc @config-plugins/react-native-webrtc
+npx expo install livekit-client @livekit/react-native @livekit/react-native-expo-plugin @livekit/react-native-webrtc @config-plugins/react-native-webrtc
 ```
 
 ### Configure app.json
