@@ -1,5 +1,6 @@
 import {
   withAndroidManifest,
+  withInfoPlist,
   AndroidConfig,
   ConfigPlugin,
 } from '@expo/config-plugins';
@@ -7,10 +8,14 @@ import {
 type LKConfigOptions = {
   "android"? : {
     "audioType"?: "media"|"communication"
-  }
+  };
+  "ios"?: {
+    "enableMultitaskingCameraAccess"?: boolean;
+  };
 }
 
-const METADATA_KEY = 'io.livekit.reactnative.expo.ANDROID_AUDIO_TYPE';
+const ANDROID_AUDIO_TYPE_KEY = 'io.livekit.reactnative.expo.ANDROID_AUDIO_TYPE';
+const IOS_MULTITASKING_CAMERA_KEY = 'io.livekit.reactnative.expo.ENABLE_MULTITASKING_CAMERA_ACCESS';
 
 const withLiveKit: ConfigPlugin<LKConfigOptions | undefined> = (config, options) => {
   if(options) {
@@ -25,18 +30,31 @@ const withLiveKit: ConfigPlugin<LKConfigOptions | undefined> = (config, options)
           if (mainApplication['meta-data']) {
             mainApplication['meta-data'] = mainApplication['meta-data'].filter(
               (item: { $?: { 'android:name'?: string } }) =>
-                item?.$?.['android:name'] !== METADATA_KEY
+                item?.$?.['android:name'] !== ANDROID_AUDIO_TYPE_KEY
             );
           }
 
           AndroidConfig.Manifest.addMetaDataItemToMainApplication(
             mainApplication,
-            METADATA_KEY,
+            ANDROID_AUDIO_TYPE_KEY,
             audioType
           );
           return config;
         });
       }
+    }
+
+    const iosOptions = options.ios;
+    if (iosOptions && typeof iosOptions.enableMultitaskingCameraAccess === 'boolean') {
+      config = withInfoPlist(config, (config) => {
+        const plist = config.modResults as Record<string, unknown>;
+        if (iosOptions.enableMultitaskingCameraAccess) {
+          plist[IOS_MULTITASKING_CAMERA_KEY] = true;
+        } else {
+          delete plist[IOS_MULTITASKING_CAMERA_KEY];
+        }
+        return config;
+      });
     }
   }
 

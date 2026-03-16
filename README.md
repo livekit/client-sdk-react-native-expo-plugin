@@ -22,10 +22,23 @@ After installing this npm package, add the config plugin to the plugins array of
 }
 ```
 
-This plugin optionally takes in an [object to customize the configuration](
-https://github.com/livekit/client-sdk-react-native-expo-plugin/blob/main/plugin/src/index.ts):
+This plugin optionally takes in an [object to customize the configuration](https://github.com/livekit/client-sdk-react-native-expo-plugin/blob/main/plugin/src/index.ts):
 
-```
+**Android**
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `audioType` | `"media"` \| `"communication"` | `"communication"` | Audio type for the Android audio session. |
+
+**iOS**
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `enableMultitaskingCameraAccess` | `boolean` | `false` | When `true`, prepares the package for background camera access (only on iOS 18+, and requires the `voip` UIBackgroundMode). |
+
+Example:
+
+```json
 {
   "expo": {
     "plugins": [
@@ -33,7 +46,10 @@ https://github.com/livekit/client-sdk-react-native-expo-plugin/blob/main/plugin/
         "@livekit/react-native-expo-plugin",
         {
           "android": {
-            "audioType": <"media" or "communication"> (defaults to "communication")
+            "audioType": "communication"
+          },
+          "ios": {
+            "enableMultitaskingCameraAccess": false
           }
         }
       ]
