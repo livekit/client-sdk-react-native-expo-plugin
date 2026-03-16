@@ -10,17 +10,18 @@
   },
   "dependencies": {
     "@config-plugins/react-native-webrtc": "^13.0.0",
-    "@livekit/react-native": "^2.9.3",
+    "@livekit/react-native": "^2.9.6",
     "@livekit/react-native-webrtc": "^137.0.2",
-    "expo": "~54.0.33",
-    "expo-dev-client": "~6.0.20",
-    "livekit-client": "^2.15.11",
-    "react": "19.1.0",
-    "react-native": "0.81.5"
+    "expo": "^55.0.0",
+    "expo-dev-client": "~55.0.16",
+    "expo-splash-screen": "~55.0.10",
+    "livekit-client": "^2.17.3",
+    "react": "19.2.0",
+    "react-native": "0.83.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@types/react": "~19.1.10",
+    "@types/react": "~19.2.10",
     "typescript": "~5.9.2"
   },
   "private": true,

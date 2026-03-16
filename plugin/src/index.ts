@@ -10,18 +10,28 @@ type LKConfigOptions = {
   }
 }
 
+const METADATA_KEY = 'io.livekit.reactnative.expo.ANDROID_AUDIO_TYPE';
+
 const withLiveKit: ConfigPlugin<LKConfigOptions | undefined> = (config, options) => {
   if(options) {
     let androidOptions = options.android
     if(androidOptions) {
       let audioType = androidOptions.audioType
-      if(audioType) {
-        config = withAndroidManifest(config, config => {
+      if (audioType) {
+        config = withAndroidManifest(config, (config) => {
           const mainApplication = AndroidConfig.Manifest.getMainApplicationOrThrow(config.modResults);
+
+          // Remove existing entry so the plugin is idempotent (no duplicate meta-data on re-run)
+          if (mainApplication['meta-data']) {
+            mainApplication['meta-data'] = mainApplication['meta-data'].filter(
+              (item: { $?: { 'android:name'?: string } }) =>
+                item?.$?.['android:name'] !== METADATA_KEY
+            );
+          }
 
           AndroidConfig.Manifest.addMetaDataItemToMainApplication(
             mainApplication,
-            'io.livekit.reactnative.expo.ANDROID_AUDIO_TYPE',
+            METADATA_KEY,
             audioType
           );
           return config;
