@@ -9,11 +9,15 @@ import expo.modules.core.interfaces.ApplicationLifecycleListener
 
 class LiveKitApplicationLifecycleListener : ApplicationLifecycleListener {
   override fun onCreate(application: Application) {
-    val applicationInfo = application.packageManager?.getApplicationInfo(application.packageName.toString(), PackageManager.GET_META_DATA)
+    val audioTypeString = try {
+      val applicationInfo = application.packageManager?.getApplicationInfo(application.packageName, PackageManager.GET_META_DATA)
+      applicationInfo?.metaData?.getString("io.livekit.reactnative.expo.ANDROID_AUDIO_TYPE")
+    } catch (e: PackageManager.NameNotFoundException) {
+      Log.w("LiveKitExpoPlugin", "Could not read application info, defaulting to communication audio type.", e)
+      null
+    }
 
-    val audioTypeString = applicationInfo?.metaData?.getString("io.livekit.reactnative.expo.ANDROID_AUDIO_TYPE")
-
-    val audioType = when(audioTypeString) {
+    val audioType = when (audioTypeString) {
       "media" -> AudioType.MediaAudioType()
       "communication", null -> AudioType.CommunicationAudioType()
       else -> {
