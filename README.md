@@ -29,6 +29,7 @@ This plugin optionally takes in an [object to customize the configuration](https
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
 | `audioType` | `"media"` \| `"communication"` | `"communication"` | Audio type for the Android audio session. |
+| `enableScreenShareService` | `boolean` | `false` | When `true`, uses a default foreground service to enable screen sharing (requires `android.permission.FOREGROUND_SERVICE` and `android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION` permissions). |
 
 **iOS**
 
