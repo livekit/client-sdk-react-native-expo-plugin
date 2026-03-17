@@ -7,7 +7,8 @@ import {
 
 type LKConfigOptions = {
   "android"? : {
-    "audioType"?: "media"|"communication"
+    "audioType"?: "media"|"communication";
+    "enableScreenShareService"?: boolean;
   };
   "ios"?: {
     "enableMultitaskingCameraAccess"?: boolean;
@@ -15,6 +16,7 @@ type LKConfigOptions = {
 }
 
 const ANDROID_AUDIO_TYPE_KEY = 'io.livekit.reactnative.expo.ANDROID_AUDIO_TYPE';
+const ANDROID_SCREEN_SHARE_SERVICE_KEY = 'io.livekit.reactnative.expo.ENABLE_SCREEN_SHARE_SERVICE';
 const IOS_MULTITASKING_CAMERA_KEY = 'io.livekit.reactnative.expo.ENABLE_MULTITASKING_CAMERA_ACCESS';
 
 const withLiveKit: ConfigPlugin<LKConfigOptions | undefined> = (config, options) => {
@@ -38,6 +40,26 @@ const withLiveKit: ConfigPlugin<LKConfigOptions | undefined> = (config, options)
             mainApplication,
             ANDROID_AUDIO_TYPE_KEY,
             audioType
+          );
+          return config;
+        });
+      }
+
+      if (typeof androidOptions.enableScreenShareService === 'boolean') {
+        config = withAndroidManifest(config, (config) => {
+          const mainApplication = AndroidConfig.Manifest.getMainApplicationOrThrow(config.modResults);
+
+          if (mainApplication['meta-data']) {
+            mainApplication['meta-data'] = mainApplication['meta-data'].filter(
+              (item: { $?: { 'android:name'?: string } }) =>
+                item?.$?.['android:name'] !== ANDROID_SCREEN_SHARE_SERVICE_KEY
+            );
+          }
+
+          AndroidConfig.Manifest.addMetaDataItemToMainApplication(
+            mainApplication,
+            ANDROID_SCREEN_SHARE_SERVICE_KEY,
+            String(androidOptions.enableScreenShareService)
           );
           return config;
         });

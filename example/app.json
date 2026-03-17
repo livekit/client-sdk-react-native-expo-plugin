@@ -49,7 +49,8 @@
         "../app.plugin.js",
         {
           "android": {
-            "audioType": "media"
+            "audioType": "media",
+            "enableScreenShareService": true
           },
           "ios": {
             "enableMultitaskingCameraAccess": true

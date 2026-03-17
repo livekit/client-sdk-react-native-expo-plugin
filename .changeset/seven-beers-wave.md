@@ -2,4 +2,4 @@
 "@livekit/react-native-expo-plugin": patch
 ---
 
-iOS: Add enableMultitaskingCameraAccess flag
+android: Add enableScreenShareService flag
