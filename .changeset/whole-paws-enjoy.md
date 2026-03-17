@@ -2,4 +2,4 @@
 "@livekit/react-native-expo-plugin": patch
 ---
 
-Add enableMultitaskingCameraAccess flag for iOS
+iOS: Add enableMultitaskingCameraAccess flag
