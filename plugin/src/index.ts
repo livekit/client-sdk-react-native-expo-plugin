@@ -3,7 +3,7 @@ import {
   withInfoPlist,
   AndroidConfig,
   ConfigPlugin,
-} from '@expo/config-plugins';
+} from 'expo/config-plugins';
 
 type LKConfigOptions = {
   "android"? : {
