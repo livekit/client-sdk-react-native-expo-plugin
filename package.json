@@ -40,7 +40,7 @@
     "expo-modules-core": "^1.11.12"
   },
   "peerDependencies": {
-    "@livekit/react-native": "^2.1.0",
+    "@livekit/react-native": "^2.1.0 || ^3.0.0",
     "expo": "*",
     "react": "*",
     "react-native": "*"
