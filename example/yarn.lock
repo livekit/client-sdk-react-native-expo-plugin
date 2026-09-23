@@ -1882,12 +1882,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/protocol@npm:1.44.0":
-  version: 1.44.0
-  resolution: "@livekit/protocol@npm:1.44.0"
+"@livekit/protocol@npm:1.50.4":
+  version: 1.50.4
+  resolution: "@livekit/protocol@npm:1.50.4"
   dependencies:
     "@bufbuild/protobuf": ^1.10.0
-  checksum: eac51adc5ff05f5d6bbf69dd2e6525ef8d1e85c8141c2b1a46df2bb1aaa4bb9a6d410c5d9559abfc9f2042353f991ddd79aee12ffb4c0c01d0598b4cae6a6dd7
+  checksum: 8c7db647bf4ad2f34990c46fd171c2aca760813888b2a41ccc05e2a0ea8eca72572977384b97e5783c12b1ff9d18416ace53a8b49778e2e4038447545a0ddb3f
   languageName: node
   linkType: hard
 
@@ -1897,54 +1897,52 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.0
     "@config-plugins/react-native-webrtc": ^13.0.0
-    "@livekit/react-native": ^2.9.6
-    "@livekit/react-native-webrtc": ^137.0.2
+    "@livekit/react-native": ^3.0.0
+    "@livekit/react-native-webrtc": ^144.2.0
     "@types/react": ~19.2.10
     expo: ^55.0.0
     expo-dev-client: ~55.0.16
     expo-splash-screen: ~55.0.10
-    livekit-client: ^2.17.3
+    livekit-client: ^2.19.0
     react: 19.2.0
     react-native: 0.83.2
     typescript: ~5.9.2
   languageName: unknown
   linkType: soft
 
-"@livekit/react-native-webrtc@npm:^137.0.2":
-  version: 137.0.2
-  resolution: "@livekit/react-native-webrtc@npm:137.0.2"
+"@livekit/react-native-webrtc@npm:^144.2.0":
+  version: 144.2.0
+  resolution: "@livekit/react-native-webrtc@npm:144.2.0"
   dependencies:
     base64-js: 1.5.1
     debug: 4.3.4
-    event-target-shim: 6.0.2
   peerDependencies:
     react-native: ">=0.60.0"
-  checksum: c23467701c7dfb74e3b223dd955b20ba1586c2186383f5b2595fff9b65a36b2db0b660de9935e009b69bc5e0bbff047d0f598495f8464daae8db5f8d9f9b7c24
+  checksum: 7b2943d51fff0a858038b0af772c88a6f7f0ef3a29afa6cdab3692e8738986b06afdf8d9f80d184f5de9cc9d58c85acdcac4af359026aedafe07a542a48f7314
   languageName: node
   linkType: hard
 
-"@livekit/react-native@npm:^2.9.6":
-  version: 2.9.6
-  resolution: "@livekit/react-native@npm:2.9.6"
+"@livekit/react-native@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@livekit/react-native@npm:3.0.0"
   dependencies:
     "@livekit/components-react": ^2.9.17
     "@livekit/mutex": ^1.1.1
     array.prototype.at: ^1.1.1
     base64-js: 1.5.1
-    event-target-shim: 6.0.2
     events: ^3.3.0
     loglevel: ^1.8.0
     promise.allsettled: ^1.0.5
-    react-native-url-polyfill: ^1.3.0
+    react-native-url-polyfill: ^3.0.0
     typed-emitter: ^2.1.0
-    web-streams-polyfill: ^4.1.0
+    web-streams-polyfill: ^4.3.0
     well-known-symbols: ^4.1.0
   peerDependencies:
-    "@livekit/react-native-webrtc": ^137.0.2
-    livekit-client: ^2.15.8
+    "@livekit/react-native-webrtc": ^144.2.0
+    livekit-client: ^2.19.0
     react: "*"
     react-native: "*"
-  checksum: a03320c2a786d98280f2fb52d0bbd43f077ceeed0b3e0ca3db3f7bcf589a8bf20bf2ce1f4a87845ca3b4d84b223a2d593b5fc10ce7aefc74efbcac5e841a7d0a
+  checksum: 21934d8d46473657bc5d2ad325ee5935d4e35da3afb51437cd198fb426e06cf228e84862777c64ecf18f478129757059a2ea1f07751bccb3efea8dc3ed4e861f
   languageName: node
   linkType: hard
 
@@ -3662,13 +3660,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"event-target-shim@npm:6.0.2":
-  version: 6.0.2
-  resolution: "event-target-shim@npm:6.0.2"
-  checksum: 9be93437e5b84056a7dc70af8b8962f4ef7f6fd41a988efcd39dfa2853e33242a4058e0dac9cc589cb16ed7409010590ac8cbcc2e3f823100cd337e13be953a0
-  languageName: node
-  linkType: hard
-
 "event-target-shim@npm:^5.0.0":
   version: 5.0.1
   resolution: "event-target-shim@npm:5.0.1"
@@ -5165,22 +5156,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:^2.17.3":
-  version: 2.17.3
-  resolution: "livekit-client@npm:2.17.3"
+"livekit-client@npm:^2.19.0":
+  version: 2.22.3
+  resolution: "livekit-client@npm:2.22.3"
   dependencies:
     "@livekit/mutex": 1.1.1
-    "@livekit/protocol": 1.44.0
+    "@livekit/protocol": 1.50.4
     events: ^3.3.0
     jose: ^6.1.0
     loglevel: ^1.9.2
+    machina: ^7.0.0
     sdp-transform: ^2.15.0
     tslib: 2.8.1
     typed-emitter: ^2.1.0
-    webrtc-adapter: ^9.0.1
+    webrtc-adapter: 9.0.6
   peerDependencies:
     "@types/dom-mediacapture-record": ^1
-  checksum: 6a97d126834f6e9d9868b5744e4ce18f96775ad94175348dae3f4cc413860f92fe50a45c4095d2ac689276ee1af9d7d9739647acf8c4c1b5c22617c6b288ca89
+  checksum: 93c96bed8558101a4005498a14a60e9513e2209240aefa61796932a1e8c53ba9e10339ab180bd4c0608f384165158746843c2568af704dad81985ce3d9ae928b
   languageName: node
   linkType: hard
 
@@ -5261,6 +5253,13 @@ __metadata:
   dependencies:
     yallist: ^3.0.2
   checksum: c154ae1cbb0c2206d1501a0e94df349653c92c8cbb25236d7e85190bcaf4567a03ac6eb43166fabfa36fd35623694da7233e88d9601fbf411a9a481d85dbd2cb
+  languageName: node
+  linkType: hard
+
+"machina@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "machina@npm:7.0.1"
+  checksum: f895a7ab8c0489b90208c2872567250736de7f46150fcb30572ec86249d63abffd3737cc7b0d94ca7529efd38c27d27747bd5f7dec7281fd88a19ec04da3bf58
   languageName: node
   linkType: hard
 
@@ -6499,14 +6498,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-url-polyfill@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "react-native-url-polyfill@npm:1.3.0"
+"react-native-url-polyfill@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "react-native-url-polyfill@npm:3.0.0"
   dependencies:
     whatwg-url-without-unicode: 8.0.0-3
   peerDependencies:
     react-native: "*"
-  checksum: 24ef81493a642b9359c1e8048de4da84fb554ffcf35677f9d8b11956d700faa4b9ac9d74f56aee67dd8d8b4ef6d9879e7431848785880ada657f8bec0211b00a
+  checksum: 3d6e02b8c32933bca588b70e86c1b2981cd2d9f4055f7ce5ba5f321596ffae5ce89fea41af8d13eca7b4f29daf685406354c761696e5a4bdfb5698468e54a527
   languageName: node
   linkType: hard
 
@@ -7694,10 +7693,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"web-streams-polyfill@npm:^4.1.0":
-  version: 4.2.0
-  resolution: "web-streams-polyfill@npm:4.2.0"
-  checksum: 21aba196470e4814ae7f475540c454145fabf72d3755fb51256f48a710302d7a203e4a519c185715c4d9a09c6201df9cc14c02fc2a0bfd64f2667b18bad96ca9
+"web-streams-polyfill@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "web-streams-polyfill@npm:4.3.0"
+  checksum: 99b398a8decc5db0d5a3450e736a43f970106b0626257e0afec149113b08ea4913140de3d27315649bc85edcd24cb37b9d477c1b71bed65b5150edc06ceb55f9
   languageName: node
   linkType: hard
 
@@ -7708,12 +7707,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webrtc-adapter@npm:^9.0.1":
-  version: 9.0.3
-  resolution: "webrtc-adapter@npm:9.0.3"
+"webrtc-adapter@npm:9.0.6":
+  version: 9.0.6
+  resolution: "webrtc-adapter@npm:9.0.6"
   dependencies:
     sdp: ^3.2.0
-  checksum: 2b29e6e6ed1018f62b2077fffd4f6d7fa9993f98091b7af459261092c2c05125bfa146b4d0dd76ed9e667703a1391743e0bb76a3754239c7d20acb034026eae3
+  checksum: 46dd6b0ac9c28fc7e113f60891674920d4058c6cd439b98c6eeaf4f80fb8a0f0ca6c76d7abb13f724f9a0bb47ada8ee75ec6e09a6a84fd66893ab6c64418ca32
   languageName: node
   linkType: hard
 
