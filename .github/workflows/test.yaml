@@ -1,0 +1,34 @@
+name: Test
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Plugin tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v5
+      - name: Enable Corepack
+        run: corepack enable # Must run before setup-node so its yarn cache uses the pinned yarn version
+      - name: Use Node.js 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Run plugin tests
+        run: yarn test plugin

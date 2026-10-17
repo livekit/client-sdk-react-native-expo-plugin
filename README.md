@@ -36,6 +36,7 @@ This plugin optionally takes in an [object to customize the configuration](https
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
 | `enableMultitaskingCameraAccess` | `boolean` | `false` | When `true`, prepares the package for background camera access (only on iOS 18+, and requires the `voip` UIBackgroundMode). |
+| `addPodSources` | `boolean` | `true` | When `true`, adds the LiveKit pod source to the `Podfile`. See [Podfile sources](#podfile-sources). |
 
 Example:
 
@@ -58,6 +59,19 @@ Example:
   }
 }
 ```
+
+### Podfile sources
+
+`@livekit/react-native-webrtc` depends on the `LiveKitWebRTC` pod, which is published to the
+[livekit/podspecs](https://github.com/livekit/podspecs) spec repo. CocoaPods trunk stops accepting
+new pods on December 2, 2026, so later `LiveKitWebRTC` versions will only be available from
+livekit/podspecs.
+
+This plugin adds `source 'https://github.com/livekit/podspecs.git'` to the top of your `Podfile`.
+If your `Podfile` had no `source` lines, it also adds `source 'https://cdn.cocoapods.org/'`, since
+declaring any source turns off the default CocoaPods trunk source. If your `Podfile` already lists
+its own sources, those are left as they are. Set `ios.addPodSources` to `false` to manage the
+`Podfile` sources yourself.
 
 ## Installation in React Native projects
 

@@ -5,6 +5,8 @@ import {
   ConfigPlugin,
 } from 'expo/config-plugins';
 
+import { withPodSources } from './podSources';
+
 type LKConfigOptions = {
   "android"? : {
     "audioType"?: "media"|"communication";
@@ -12,6 +14,8 @@ type LKConfigOptions = {
   };
   "ios"?: {
     "enableMultitaskingCameraAccess"?: boolean;
+    // Adds the livekit/podspecs source (and CocoaPods trunk, if the Podfile has no sources) to the Podfile.
+    "addPodSources"?: boolean;
   };
 }
 
@@ -20,6 +24,11 @@ const ANDROID_SCREEN_SHARE_SERVICE_KEY = 'io.livekit.reactnative.expo.ENABLE_SCR
 const IOS_MULTITASKING_CAMERA_KEY = 'io.livekit.reactnative.expo.ENABLE_MULTITASKING_CAMERA_ACCESS';
 
 const withLiveKit: ConfigPlugin<LKConfigOptions | undefined> = (config, options) => {
+  // Applied even without options, since newer LiveKitWebRTC versions are only published to livekit/podspecs.
+  if (options?.ios?.addPodSources !== false) {
+    config = withPodSources(config);
+  }
+
   if(options) {
     let androidOptions = options.android
     if(androidOptions) {
