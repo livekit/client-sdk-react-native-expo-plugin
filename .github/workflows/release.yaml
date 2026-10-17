@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v5
+      - name: Enable Corepack
+        run: corepack enable # Must run before setup-node so its yarn cache uses the pinned yarn version
       - name: Use Node.js 24
         uses: actions/setup-node@v6
         with:
