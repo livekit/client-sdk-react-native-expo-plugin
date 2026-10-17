@@ -1,5 +1,11 @@
 # @livekit/react-native-expo-plugin
 
+## 1.1.0
+
+### Minor Changes
+
+- ios: Add the livekit/podspecs source to the Podfile, since newer `LiveKitWebRTC` versions are only published there. CocoaPods trunk is also added when the Podfile had no sources of its own. Set `ios.addPodSources` to `false` to manage Podfile sources yourself. - [#29](https://github.com/livekit/client-sdk-react-native-expo-plugin/pull/29) ([@davidliu](https://github.com/davidliu))
+
 ## 1.0.3
 
 ### Patch Changes
