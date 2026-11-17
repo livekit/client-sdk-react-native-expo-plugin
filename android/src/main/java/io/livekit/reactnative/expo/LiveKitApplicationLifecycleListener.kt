@@ -5,7 +5,7 @@ import android.content.pm.PackageManager
 import android.util.Log
 import com.livekit.reactnative.LiveKitReactNative
 import com.livekit.reactnative.audio.AudioType
-import com.oney.WebRTCModule.WebRTCModuleOptions
+import io.livekit.reactnative.webrtc.WebRTCModuleOptions
 import expo.modules.core.interfaces.ApplicationLifecycleListener
 
 class LiveKitApplicationLifecycleListener : ApplicationLifecycleListener {

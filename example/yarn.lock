@@ -1897,8 +1897,8 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.0
     "@config-plugins/react-native-webrtc": ^13.0.0
-    "@livekit/react-native": ^3.0.0
-    "@livekit/react-native-webrtc": ^144.2.0
+    "@livekit/react-native": ^3.2.0
+    "@livekit/react-native-webrtc": ^150.2.0
     "@types/react": ~19.2.10
     expo: ^55.0.0
     expo-dev-client: ~55.0.16
@@ -1910,21 +1910,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@livekit/react-native-webrtc@npm:^144.2.0":
-  version: 144.2.0
-  resolution: "@livekit/react-native-webrtc@npm:144.2.0"
+"@livekit/react-native-webrtc@npm:^150.2.0":
+  version: 150.2.0
+  resolution: "@livekit/react-native-webrtc@npm:150.2.0"
   dependencies:
     base64-js: 1.5.1
     debug: 4.3.4
   peerDependencies:
     react-native: ">=0.60.0"
-  checksum: 7b2943d51fff0a858038b0af772c88a6f7f0ef3a29afa6cdab3692e8738986b06afdf8d9f80d184f5de9cc9d58c85acdcac4af359026aedafe07a542a48f7314
+  checksum: db3700ef86bd142043386c994abcabe078cc5d59d5a67d0535cc9063b924a79c1358740a97c648e326281b20c5e5e7654fd879b4e0f3e21cc681e170520ccdf6
   languageName: node
   linkType: hard
 
-"@livekit/react-native@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@livekit/react-native@npm:3.0.0"
+"@livekit/react-native@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@livekit/react-native@npm:3.2.0"
   dependencies:
     "@livekit/components-react": ^2.9.17
     "@livekit/mutex": ^1.1.1
@@ -1938,11 +1938,11 @@ __metadata:
     web-streams-polyfill: ^4.3.0
     well-known-symbols: ^4.1.0
   peerDependencies:
-    "@livekit/react-native-webrtc": ^144.2.0
-    livekit-client: ^2.19.0
+    "@livekit/react-native-webrtc": ^150.2.0
+    livekit-client: ^2.20.0
     react: "*"
     react-native: "*"
-  checksum: 21934d8d46473657bc5d2ad325ee5935d4e35da3afb51437cd198fb426e06cf228e84862777c64ecf18f478129757059a2ea1f07751bccb3efea8dc3ed4e861f
+  checksum: 303b96d5091121decbe54fc29115f69ae5c1dae88d20d4bf8357c6407f9ebc6bf054556c1c925da41f1e3a74bce22bb839fe87ec738fc0423fbe121f49482ec1
   languageName: node
   linkType: hard
 
