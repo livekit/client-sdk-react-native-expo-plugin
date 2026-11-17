@@ -1,5 +1,11 @@
 # @livekit/react-native-expo-plugin
 
+## 1.2.0
+
+### Minor Changes
+
+- Build against `@livekit/react-native-webrtc` 150.2.0, which renames its native classes so it can be installed in the same app as other react-native-webrtc forks. This release requires `@livekit/react-native` 3.2.0 or later and `@livekit/react-native-webrtc` 150.2.0 or later. Plugin versions 1.0.2 to 1.1.0 don't build against `@livekit/react-native-webrtc` 150.2.0, so update all three packages together. - [#32](https://github.com/livekit/client-sdk-react-native-expo-plugin/pull/32) ([@davidliu](https://github.com/davidliu))
+
 ## 1.1.0
 
 ### Minor Changes
