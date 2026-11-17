@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@config-plugins/react-native-webrtc": "^13.0.0",
-    "@livekit/react-native": "^3.0.0",
-    "@livekit/react-native-webrtc": "^144.2.0",
+    "@livekit/react-native": "^3.2.0",
+    "@livekit/react-native-webrtc": "^150.2.0",
     "expo": "^55.0.0",
     "expo-dev-client": "~55.0.16",
     "expo-splash-screen": "~55.0.10",
